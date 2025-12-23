@@ -15,20 +15,18 @@ window.onload = function() {
     let action = ['ate', 'peed', 'crushed', 'broke'];
     let what = ['my homework', 'my phone', 'the car'];
     let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
-  
+    
+  function getrandomElement(array){
+    let randomElement = Math.floor(Math.random() * array.length)
+    return array [randomElement]
+  }
 
-    let randomWho = who [Math.floor(Math.random() *4)]
-    console.log (randomWho)
+  function excusesGenerator(){
+    let excuse = `${getrandomElement(who)} ${getrandomElement(action)}  ${getrandomElement(what)}  ${getrandomElement (when)}`
+    document.getElementById("excuse").innerHTML=excuse
+  }
 
-    let randomAction = action[Math.floor(Math.random() *4)]
-    console.log (randomAction)
-
-    let randomWhat = what[Math.floor(Math.random() *3)]
-    console.log (randomWhat)
-
-    let randomWhen = when[Math.floor(Math.random() *5)]
-    console.log (randomWhen)
-
-    let excusa =(randomWho+" "+randomAction+" "+randomWhat+" "+randomWhen)
-    document.getElementById("excuse").innerHTML=excusa
+  excusesGenerator()
 };
+
+
